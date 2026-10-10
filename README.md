@@ -37,8 +37,8 @@ js/app.js         Navigation, quiz engine, scoring, localStorage persistence, da
 Key design decisions:
 
 - **Data separate from logic.** New modules and questions are added by editing `data/` only.
-- **localStorage instead of a database.** SQLite was evaluated and deferred: it added complexity and backend dependencies the prototype did not need, and keeping data in the browser means no personal data is collected.
-- **Fallback first.** API quotas and inconsistent search results were real risks during development, so the curated dataset is the default and the API is opt-in.
+- **localStorage instead of a database.** SQLite was evaluated and excluded: it added complexity and backend dependencies the prototype did not need, and keeping data in the browser means no personal data is collected.
+- **Fallback first.** API quota limits and privacy concerns were real risks, so the curated dataset is the default and the API is opt-in.
 
 ## Run it locally
 
