@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Programmers Arise (Prototype)</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header role="banner">
+    <h1>Programmers Arise — Prototype Learning Environment</h1>
+  </header>
+
+  <main id="main" role="main">
+    <section id="login" role="region" aria-labelledby="loginHeading">
+      <h2 id="loginHeading">Start</h2>
+      <p>This prototype stores your scores locally in your browser (<code>localStorage</code>). No personal data leaves your device.</p>
+      <label for="username">Enter a display name</label>
+      <input id="username" type="text" autocomplete="off" placeholder="e.g. Alex"/>
+      <button id="startBtn">Start Learning</button>
+    </section>
+
+    <section id="modules" class="hidden" role="region" aria-labelledby="modulesHeading">
+      <h2 id="modulesHeading">Available Modules</h2>
+      <p id="welcomeLine" aria-live="polite">Welcome, <strong id="welcomeName"></strong>!</p>
+      <div class="actions">
+        <button id="openDashboard" aria-controls="dashboard">Dashboard</button>
+        <button id="logoutBtn">Logout</button>
+      </div>
+      <p id="privacyNote">This prototype stores scores locally in your browser (localStorage). No personal data leaves your device.</p>
+      <ul id="moduleList"></ul>
+    </section>
+
+    <section id="player" class="hidden" role="region" aria-labelledby="playerHeading">
+      <h2 id="playerHeading">Module</h2>
+      <button id="backToModules" class="secondary">&larr; Back to Modules</button>
+      <h3 id="moduleTitle"></h3>
+      <div id="videoWrapper" class="video-wrapper" aria-label="Video player area"></div>
+      <div id="explanation">
+        <p>Watch the video, then answer the short quiz below. You can retry without penalty.</p>
+      </div>
+      <div id="quizContainer"></div>
+      <div id="quizFeedback" class="feedback" aria-live="polite"></div>
+      <button id="submitQuiz" class="primary">Submit Quiz</button>
+      <button id="retryQuiz" class="hidden">Retry Quiz</button>
+    </section>
+
+    <section id="dashboard" class="hidden" role="region" aria-labelledby="dashboardHeading">
+      <h2 id="dashboardHeading">Dashboard</h2>
+      <button id="backToModulesFromDashboard" class="secondary">&larr; Back to Modules</button>
+      <p id="dashIntro">Your best scores and attempt history are shown below.</p>
+      <table id="progressTable" aria-label="Progress summary">
+        <thead>
+          <tr><th>Module</th><th>Best Score</th><th>Attempts</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button id="exportBtn">Export Progress (JSON)</button>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>Academic prototype for TM470. Embedded videos are public/embeddable. No personal data is processed.</p>
+  </footer>
+
+  <script src="data/videos.js"></script>
+  <script src="data/quizzes.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
